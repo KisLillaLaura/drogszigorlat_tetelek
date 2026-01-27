@@ -129,8 +129,8 @@ const botanicalData = {
     "Ekdiszteroidok": ["Leuzeae radix"]
   },
   "Aminosavak, peptidek, biogén aminok, alkamidok, lektinek, növényi enzimek":{
-    "Alkamidok": ["Echinacea-drogok"]
-    "Lektinek": [" Visci albae herba"]
+    "Alkamidok": ["Echinacea-drogok"],
+    "Lektinek": [" Visci albae herba"],
     "Növényi enzimek": ["Carica papaya", "Ananas comosus", "Ficus spp."]
   },
   "Ornitin eredetű alkaloidok":{
@@ -163,8 +163,8 @@ const botanicalData = {
   "Tropolonvázas alkaloidok": ["Colchici semen"]
 },
 "Pszeudoalkaloidok":{
-  "β-Amino-fenil-propánvázas alkaloidok": ["Ephedrae herba", "Cathae edulis folium"]
-  "Benzil-aminvázas  proto-pszeudo alkaloidok": ["Capsici fructus"]
+  "β-Amino-fenil-propánvázas alkaloidok": ["Ephedrae herba", "Cathae edulis folium"],
+  "Benzil-aminvázas  proto-pszeudo alkaloidok": ["Capsici fructus"],
   "Amaryllidaceae-alkaloidok":  ["Galanthi bulbus"]
 },
 "Nukleotid és egyéb eredetű pszeudoalkaloidok":{
@@ -175,7 +175,7 @@ const botanicalData = {
   "Diterpén alkaloidok": ["Aconiti tuber", "Taxi cortex"],
   "Szteroid alkaloidok": ["Dulcamarae stipes", "Solani nigri herba", "Veratri rhizoma et radix"],
   "Cianogén glikozidok":  ["Amygdalae semen", "Pruni armeniacae semen"],
-  "mustárolaj-glikozidok": ["Sinapis nigrae semen", "Sinapis albae semen"]
+  "mustárolaj-glikozidok": ["Sinapis nigrae semen", "Sinapis albae semen"],
   "Egyéb kéntartalmú vegyületeket tartalmazó drogok": ["Allii sativi bulbus", "Allii cepae bulbus"]
 
 
@@ -187,35 +187,31 @@ let currentTitle = "";
 
 function initGame() {
     const titles = Object.keys(botanicalData);
-    const lastTitle = currentTitle;
-    
-    // Ne sorsolja ugyanazt kétszer egymás után, ha több tétel is van
+    let newTitle;
     do {
-        currentTitle = titles[Math.floor(Math.random() * titles.length)];
-    } while (currentTitle === lastTitle && titles.length > 1);
+        newTitle = titles[Math.floor(Math.random() * titles.length)];
+    } while (newTitle === currentTitle);
     
+    currentTitle = newTitle;
     document.getElementById('tetel-cim').innerText = currentTitle;
     const area = document.getElementById('game-area');
-    const msg = document.getElementById('status-msg');
-    
     area.innerHTML = "";
-    msg.style.display = "none";
+    document.getElementById('status-msg').style.display = "none";
 
     const categories = botanicalData[currentTitle];
-    
     for (let catName in categories) {
         const section = document.createElement('div');
         section.className = 'category-block';
         
         const label = document.createElement('span');
         label.className = 'category-title';
-        label.innerText = catName + " (" + categories[catName].length + " db):";
+        const count = categories[catName].length;
+        label.innerText = `${catName} (${count} db):`;
         
         const grid = document.createElement('div');
         grid.className = 'input-grid';
         grid.dataset.category = catName;
 
-        // Dinamikusan annyi input, ahány válasz van
         categories[catName].forEach(() => {
             const input = document.createElement('input');
             input.type = "text";
@@ -236,43 +232,45 @@ function checkAnswers() {
 
     grids.forEach(grid => {
         const catName = grid.dataset.category;
-        const expectedAnswers = categories[catName].map(s => s.toLowerCase().trim());
+        const expected = categories[catName].map(s => s.toLowerCase().trim());
         const inputs = Array.from(grid.querySelectorAll('input'));
-        
         const userValues = inputs.map(i => i.value.toLowerCase().trim()).filter(v => v !== "");
         
-        // Ellenőrizzük minden egyes inputot a kategórián belül
+        // Egyedi válaszok ellenőrzése (ne fogadja el ugyanazt kétszer)
+        let foundForThisCat = 0;
+        let usedAnswers = new Set();
+
         inputs.forEach(input => {
             const val = input.value.toLowerCase().trim();
             if (val === "") {
                 input.className = "";
-                totalCorrect = false;
-            } else if (expectedAnswers.includes(val)) {
+            } else if (expected.includes(val) && !usedAnswers.has(val)) {
                 input.className = "correct-style";
+                usedAnswers.add(val);
+                foundForThisCat++;
             } else {
                 input.className = "wrong-style";
                 totalCorrect = false;
             }
         });
 
-        // Plusz ellenőrzés: minden válasz megvan-e és nincs-e duplikáció
-        const uniqueMatches = new Set(userValues.filter(v => expectedAnswers.includes(v)));
-        if (uniqueMatches.size !== expectedAnswers.length) {
-            totalCorrect = false;
-        }
+        if (foundForThisCat !== expected.length) totalCorrect = false;
     });
 
     const msg = document.getElementById('status-msg');
     msg.style.display = "block";
     if (totalCorrect) {
         msg.innerText = "Tökéletes! Minden drog a helyén van.";
+        msg.className = "feedback correct-style";
         msg.style.backgroundColor = "#d4edda";
-        msg.style.color = "#155724";
     } else {
-        msg.innerText = "Valami nem stimmel. Ellenőrizd a piros mezőket vagy a hiányzó drogokat!";
+        msg.innerText = "Hibás vagy hiányzó válaszok!";
+        msg.className = "feedback wrong-style";
         msg.style.backgroundColor = "#f8d7da";
-        msg.style.color = "#721c24";
     }
 }
 
-initGame();
+// Eseménykezelők hozzáadása (megoldja a ReferenceError-t)
+document.addEventListener('DOMContentLoaded', () => {
+    initGame();
+});
