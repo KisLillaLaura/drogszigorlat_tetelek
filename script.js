@@ -174,20 +174,22 @@ const botanicalData = {
     }
 };
 
-let currentTitle = "";
+// script.js eleje... (a botanicalData marad ugyanaz)
 
 function initGame() {
     const titles = Object.keys(botanicalData);
     let newTitle;
     do {
         newTitle = titles[Math.floor(Math.random() * titles.length)];
-    } while (newTitle === currentTitle);
+    } while (newTitle === currentTitle && titles.length > 1);
     
     currentTitle = newTitle;
     document.getElementById('tetel-cim').innerText = currentTitle;
     const area = document.getElementById('game-area');
     area.innerHTML = "";
-    document.getElementById('status-msg').style.display = "none";
+    const msg = document.getElementById('status-msg');
+    msg.style.display = "none";
+    msg.className = "feedback"; // Reset osztályok
 
     const categories = botanicalData[currentTitle];
     for (let catName in categories) {
@@ -196,8 +198,7 @@ function initGame() {
         
         const label = document.createElement('span');
         label.className = 'category-title';
-        const count = categories[catName].length;
-        label.innerText = `${catName} (${count} db):`;
+        label.innerText = `${catName} (${categories[catName].length} db):`;
         
         const grid = document.createElement('div');
         grid.className = 'input-grid';
@@ -225,27 +226,26 @@ function checkAnswers() {
         const catName = grid.dataset.category;
         const expected = categories[catName].map(s => s.toLowerCase().trim());
         const inputs = Array.from(grid.querySelectorAll('input'));
-        const userValues = inputs.map(i => i.value.toLowerCase().trim()).filter(v => v !== "");
         
-        // Egyedi válaszok ellenőrzése (ne fogadja el ugyanazt kétszer)
-        let foundForThisCat = 0;
         let usedAnswers = new Set();
+        let correctInCat = 0;
 
         inputs.forEach(input => {
             const val = input.value.toLowerCase().trim();
             if (val === "") {
                 input.className = "";
+                totalCorrect = false;
             } else if (expected.includes(val) && !usedAnswers.has(val)) {
                 input.className = "correct-style";
                 usedAnswers.add(val);
-                foundForThisCat++;
+                correctInCat++;
             } else {
                 input.className = "wrong-style";
                 totalCorrect = false;
             }
         });
 
-        if (foundForThisCat !== expected.length) totalCorrect = false;
+        if (correctInCat !== expected.length) totalCorrect = false;
     });
 
     const msg = document.getElementById('status-msg');
@@ -255,13 +255,11 @@ function checkAnswers() {
         msg.className = "feedback correct-style";
         msg.style.backgroundColor = "#d4edda";
     } else {
-        msg.innerText = "Hibás vagy hiányzó válaszok!";
+        msg.innerText = "Valami nem stimmel! Ellenőrizd a piros mezőket.";
         msg.className = "feedback wrong-style";
         msg.style.backgroundColor = "#f8d7da";
     }
 }
 
-// Eseménykezelők hozzáadása (megoldja a ReferenceError-t)
-document.addEventListener('DOMContentLoaded', () => {
-    initGame();
-});
+// EZ FONTOS: Azonnal elindítjuk a játékot, amint a script betöltődött
+initGame();
