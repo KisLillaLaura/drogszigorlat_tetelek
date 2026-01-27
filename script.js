@@ -177,21 +177,31 @@ const botanicalData = {
 // script.js eleje... (a botanicalData marad ugyanaz)
 let currentTitle = "";
 
+// 2. A játék inicializálása
 function initGame() {
     const titles = Object.keys(botanicalData);
     let newTitle;
+    
+    // Véletlenszerű tétel választása (ne legyen ugyanaz, mint az előző)
     do {
         newTitle = titles[Math.floor(Math.random() * titles.length)];
     } while (newTitle === currentTitle && titles.length > 1);
     
     currentTitle = newTitle;
-    document.getElementById('tetel-cim').innerText = currentTitle;
-    const area = document.getElementById('game-area');
-    area.innerHTML = "";
-    const msg = document.getElementById('status-msg');
-    msg.style.display = "none";
-    msg.className = "feedback"; // Reset osztályok
 
+    // DOM elemek elérése biztonságosan
+    const titleDisplay = document.getElementById('tetel-cim');
+    const area = document.getElementById('game-area');
+    const msg = document.getElementById('status-msg');
+
+    if (titleDisplay) titleDisplay.innerText = currentTitle;
+    if (area) area.innerHTML = "";
+    if (msg) {
+        msg.style.display = "none";
+        msg.className = "feedback";
+    }
+
+    // Input mezők generálása
     const categories = botanicalData[currentTitle];
     for (let catName in categories) {
         const section = document.createElement('div');
@@ -214,11 +224,14 @@ function initGame() {
 
         section.appendChild(label);
         section.appendChild(grid);
-        area.appendChild(section);
+        if (area) area.appendChild(section);
     }
 }
 
+// 3. Ellenőrzés logika
 function checkAnswers() {
+    if (!currentTitle) return;
+
     const categories = botanicalData[currentTitle];
     const grids = document.querySelectorAll('.input-grid');
     let totalCorrect = true;
@@ -250,17 +263,21 @@ function checkAnswers() {
     });
 
     const msg = document.getElementById('status-msg');
-    msg.style.display = "block";
-    if (totalCorrect) {
-        msg.innerText = "Tökéletes! Minden drog a helyén van.";
-        msg.className = "feedback correct-style";
-        msg.style.backgroundColor = "#d4edda";
-    } else {
-        msg.innerText = "Valami nem stimmel! Ellenőrizd a piros mezőket.";
-        msg.className = "feedback wrong-style";
-        msg.style.backgroundColor = "#f8d7da";
+    if (msg) {
+        msg.style.display = "block";
+        if (totalCorrect) {
+            msg.innerText = "Tökéletes! Minden drog a helyén van.";
+            msg.className = "feedback correct-style";
+            msg.style.backgroundColor = "#d4edda";
+        } else {
+            msg.innerText = "Valami nem stimmel! Ellenőrizd a piros mezőket.";
+            msg.className = "feedback wrong-style";
+            msg.style.backgroundColor = "#f8d7da";
+        }
     }
 }
 
-// EZ FONTOS: Azonnal elindítjuk a játékot, amint a script betöltődött
-initGame();
+// 4. BIZTONSÁGOS INDÍTÁS: Megvárjuk, amíg a HTML betöltődik
+document.addEventListener('DOMContentLoaded', () => {
+    initGame();
+});
