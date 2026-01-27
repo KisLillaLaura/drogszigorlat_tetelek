@@ -303,7 +303,7 @@ function checkAnswers() {
             msg.style.backgroundColor = "#f8d7da";
         }
     }
-}
+
 
 // 4. BIZTONSÁGOS INDÍTÁS: Megvárjuk, amíg a HTML betöltődik
 document.addEventListener('DOMContentLoaded', () => {
