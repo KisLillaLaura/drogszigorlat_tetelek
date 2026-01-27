@@ -147,12 +147,31 @@ button {
 
 /* Visszajelzés üzenet */
 .feedback {
-    margin-top: 25px;
+    margin-top: 20px;
     padding: 15px;
-    border-radius: 10px;
-    font-weight: 600;
-    text-align: center;
-    font-size: 1.1rem;
+    border-radius: 8px;
+    display: none; /* Alapértelmezetten rejtve, a JS kapcsolja be */
+    line-height: 1.6;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.correct-style {
+    border: 2px solid #28a745 !important;
+    background-color: #d4edda !important;
+}
+
+.wrong-style {
+    border: 2px solid #dc3545 !important;
+    background-color: #f8d7da !important;
+}
+
+/* Kifejezetten a kategóriák címeihez a visszajelzésben */
+.feedback strong {
+    color: #333;
+    display: inline-block;
+    margin-top: 10px;
 }
 
 /* Reszponzivitás mobilon */
