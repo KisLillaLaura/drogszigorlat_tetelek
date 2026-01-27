@@ -99,7 +99,7 @@ const botanicalData = {
       "Szeszkviterpén-laktonok": ["Cardui benedicti herba", "Taraxaci officinalis radix", "Cynarae folium, Arnicae flos"],
       "Diterpének": ["Marrubii herba", "Ginkgonis folium", "Stevia rotundifolia"],
       "Triterpén-származékok":{
-          "Lanoszterolból levezetett keserűanyagok: ["Colocynthidis fructus"],
+          "Lanoszterolból levezetett keserűanyagok": ["Colocynthidis fructus"],
           "Szekotriterpén keserűanyagok": ["Quassiae lignum"]
       },
       "Iridoidok és szekoiridoidok": ["Gentianae radix", "Menyanthidis trifoliatae folium", "Centaurii herba", "Harpagophyti radix", "Plantaginis lanceolatae folium", "Agni casti fructus", "Oleae folium"]
