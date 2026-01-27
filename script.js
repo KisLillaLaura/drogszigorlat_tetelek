@@ -129,7 +129,7 @@ const botanicalData = {
     },
     "Ornitin eredetű alkaloidok": {
         "Tropánvázas alkaloidok": ["Belladonnae folium", "Stramonii folium", "Cocae folium"],
-        "Pirrolizidinvázas alkaloidok": ["Nicotianae folium", "Boraginis herba", "Symphyti radix", "Farfarae folium"],
+        "Pirrolizidinvázas alkaloidok": ["Boraginis herba", "Symphyti radix", "Farfarae folium"],
         "Pirrolidinvázas alkaloidok": ["Nicotianae folium"]
     },
     "Lizin eredetű alkaloidok": {
