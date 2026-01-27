@@ -13,7 +13,7 @@ const botanicalData = {
     },
     "Homo- és heteropoliszacharidok és drogjaik": {
       "homopoliszachardiok":{
-        "Glükánok (keményítők, cellulóz)", 
+        "Glükánok (keményítők, cellulóz)":[], 
         "Fruktánok": ["Taraxaci officinalis radix", "Cichorii intybi radix", "Graminis rhizoma", "Arctii radix"]
       },
       "növényi heteropoliszacharidok": { 
