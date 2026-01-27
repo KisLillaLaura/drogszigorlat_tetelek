@@ -235,10 +235,12 @@ function checkAnswers() {
     const categories = botanicalData[currentTitle];
     const grids = document.querySelectorAll('.input-grid');
     let totalCorrect = true;
+    let correctionDetails = []; // Itt gyűjtjük a helyes válaszokat hiba esetén
 
     grids.forEach(grid => {
         const catName = grid.dataset.category;
-        const expected = categories[catName].map(s => s.toLowerCase().trim());
+        const expectedRaw = categories[catName]; // Eredeti formátum (pl. "Lini semen")
+        const expectedLower = expectedRaw.map(s => s.toLowerCase().trim());
         const inputs = Array.from(grid.querySelectorAll('input'));
         
         let usedAnswers = new Set();
@@ -249,7 +251,7 @@ function checkAnswers() {
             if (val === "") {
                 input.className = "";
                 totalCorrect = false;
-            } else if (expected.includes(val) && !usedAnswers.has(val)) {
+            } else if (expectedLower.includes(val) && !usedAnswers.has(val)) {
                 input.className = "correct-style";
                 usedAnswers.add(val);
                 correctInCat++;
@@ -259,8 +261,34 @@ function checkAnswers() {
             }
         });
 
-        if (correctInCat !== expected.length) totalCorrect = false;
+        if (correctInCat !== expectedRaw.length) {
+            totalCorrect = false;
+            // Elmentjük a kategória nevét és a hozzá tartozó összes helyes választ
+            correctionDetails.push(`<strong>${catName}:</strong> ${expectedRaw.join(", ")}`);
+        }
     });
+
+    const msg = document.getElementById('status-msg');
+    if (msg) {
+        msg.style.display = "block";
+        if (totalCorrect) {
+            msg.innerHTML = "<strong>Tökéletes!</strong> Minden drog a helyén van.";
+            msg.className = "feedback correct-style";
+            msg.style.backgroundColor = "#d4edda";
+            msg.style.color = "#155724";
+        } else {
+            // Itt fűzzük hozzá a helyes megoldásokat az üzenethez
+            msg.innerHTML = `
+                <strong>Valami nem stimmel!</strong> Ellenőrizd a piros mezőket.<br><br>
+                <u>A helyes megoldások ennél a tételnél:</u><br>
+                ${correctionDetails.join("<br>")}
+            `;
+            msg.className = "feedback wrong-style";
+            msg.style.backgroundColor = "#f8d7da";
+            msg.style.color = "#721c24";
+        }
+    }
+}
 
     const msg = document.getElementById('status-msg');
     if (msg) {
