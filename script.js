@@ -175,6 +175,7 @@ const botanicalData = {
 };
 
 // script.js eleje... (a botanicalData marad ugyanaz)
+let currentTitle = "";
 
 function initGame() {
     const titles = Object.keys(botanicalData);
