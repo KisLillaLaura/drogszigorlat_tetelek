@@ -77,6 +77,20 @@ input {
     transition: all 0.3s ease;
     background: #fff;
 }
+.main-active {
+    border: 2px solid #27ae60 !important; /* Erősebb zöld keret */
+    background-color: #fafdfb;
+}
+
+.pair-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Hogy mobilra is jó legyen */
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #fdfdfd;
+    border-radius: 5px;
+}
 
 input:focus {
     border-color: #3498db;
