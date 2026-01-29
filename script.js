@@ -129,7 +129,7 @@ const botanicalData = {
 	   {d:"Fraxini folium", h:[{név:"eszkuletin", main:true}, {név:"fraxetin", main:true}, {név:"szkopoletin", main:true}, {név:"klorogénsav", main:false}, {név:"oleuropein", main:false}, {név:" ligsztrozid", main:false}]}],
         "Furanokumarinok, piranokumarinok": [
 	   {d:"Heracleum-fajok", h:[{név:"xantotoxin", main:true}]},
-	   {d:"Rutae herba", h:[{név:"bergaptén", main:true}; {név:" rutin", main:false}]},
+	   {d:"Rutae herba", h:[{név:"bergaptén", main:true}, {név:" rutin", main:false}]},
 	   {d:"Aurantii amari epicarpium et mesocarpium", h:[{"név:""bergaptén", main:true}]},
 	   {d:"Angelicae radix", h:[{név:"umbelliferon", main:false}, {"név:""bergaptén", main:true}, {név:"xantotoxin", main:true}, {név:"angelicin", main:true}]},
 	   {d:"Ammi fructus", h:[ {"név:""bergaptén", main:true}, {név:"xantotoxin", main:true}]},
