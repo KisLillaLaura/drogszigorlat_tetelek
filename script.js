@@ -203,7 +203,7 @@ const botanicalData = {
         ]
     },
    "Terpenofenoloidok": {
-        "Floroglucinszármazékok": [{d:"Lupuli flos", h:[{név:"humulon", main:true}, {név:"lupulon", main:true} {név:"xantohumol", main:false}, {név:"prenilnaringenin", main:false}]}],
+        "Floroglucinszármazékok": [{d:"Lupuli flos", h:[{név:"humulon", main:true}, {név:"lupulon", main:true}, {név:"xantohumol", main:false}, {név:"prenilnaringenin", main:false}]}],
         "Kannabinoidok": [{d:"Cannabis herba", h:[{név:"tetrahidro-kannabinol", main:true}, {név:"kannabidiol", main:true}]}]
     },
     "Mérges gombák": {
