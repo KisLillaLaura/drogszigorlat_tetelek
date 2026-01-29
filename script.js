@@ -293,15 +293,15 @@ const botanicalData = {
 
         ]
     },
-    "Szívglikozidok": {
-		"szívglikozidok": [
-            { d: "Digitalis purpureae folium", h: [{ név: "digitoxin", main: true }, { név: "purpureaglikozid A", main: false }] },
-            { d: "Digitalis lanatae folium", h: [{ név: "digoxin", main: true }, { név: "lanatozid C", main: false }] },
-            { d: "Convallariae folium", h: [{ név: "konvallatoxin", main: true }] }
-	        { d:"Strophanthi semen", h:[{név:"g-sztrofantin", main:true}, {név:"k-sztrofantin", main:true}]},
-	        { d:"Scillae bulbus", h:[{név:"szcillarein", main:true},{név:"proszcillain", main:true}]}
-			]
-    },
+  "Szívglikozidok": {
+      "szívglikozidok": [
+          { d: "Digitalis purpureae folium", h: [{ név: "digitoxin", main: true }, { név: "purpureaglikozid A", main: false }] },
+          { d: "Digitalis lanatae folium", h: [{ név: "digoxin", main: true }, { név: "lanatozid C", main: false }] },
+          { d: "Convallariae folium", h: [{ név: "konvallatoxin", main: true }] }, // <--- ITT VOLT A HIBA (hiányzó vessző)
+          { d: "Strophanthi semen", h: [{ név: "g-sztrofantin", main: true }, { név: "k-sztrofantin", main: true }] }, // <--- ITT IS HIÁNYZOTT
+          { d: "Scillae bulbus", h: [{ név: "szcillarein", main: true }, { név: "proszcillain", main: true }] }
+      ]
+  },
     "Fitoszterolok és ekdiszteroidok": {
         "Fitoszterolok": [
             { d: "Pruni africanae cortex", h: [{ név: "béta-szitoszterol", main: true }] },
