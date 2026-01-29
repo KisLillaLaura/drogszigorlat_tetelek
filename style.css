@@ -3,7 +3,7 @@
 /* Alapbeállítások és háttér */
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f0f4f1; /* Halvány zöldes-szürke háttér */
+    background-color: #f0f4f1; 
     background-image: radial-gradient(#d1dbd3 1px, transparent 1px);
     background-size: 20px 20px;
     display: flex;
@@ -22,8 +22,8 @@ body {
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.08);
     width: 100%;
-    max-width: 750px;
-    border-top: 8px solid #27ae60; /* Gyógyszerész-zöld díszcsík */
+    max-width: 850px; /* Megnövelve, hogy a több input elférjen */
+    border-top: 8px solid #27ae60;
 }
 
 /* Tételcím */
@@ -42,11 +42,6 @@ h1 {
     background: #f8faf9;
     border-radius: 12px;
     border: 1px solid #e1e8e3;
-    transition: transform 0.2s ease;
-}
-
-.category-block:hover {
-    transform: translateX(5px);
 }
 
 /* Kategória neve */
@@ -54,42 +49,50 @@ h1 {
     display: block;
     font-weight: 700;
     color: #27ae60;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    border-bottom: 1px solid #d1dbd3;
+    padding-bottom: 5px;
 }
 
-/* Input mezők rácsa */
-.input-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 12px;
-}
-
-/* Egyedi input stílus */
-input {
-    padding: 12px 15px;
-    border: 2px solid #dfe6e0;
-    border-radius: 8px;
-    font-size: 1rem;
-    outline: none;
-    transition: all 0.3s ease;
-    background: #fff;
-}
-.main-active {
-    border: 2px solid #27ae60 !important; /* Erősebb zöld keret */
-    background-color: #fafdfb;
-}
-
+/* Konténer a drog + hatóanyagok számára */
 .pair-wrapper {
     display: flex;
-    flex-wrap: wrap; /* Hogy mobilra is jó legyen */
+    flex-wrap: wrap; /* Mobilon egymás alá tördeli az inputokat */
     gap: 10px;
     margin-bottom: 15px;
-    padding: 10px;
-    background: #fdfdfd;
-    border-radius: 5px;
+    padding: 12px;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    align-items: center;
+}
+
+/* Általános input stílus */
+input {
+    padding: 10px 15px;
+    border: 2px solid #dfe6e0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.2s ease;
+    flex: 1; /* Kitöltik a rendelkezésre álló helyet */
+    min-width: 180px;
+}
+
+/* Drog név mező (d-input) megkülönböztetése */
+.d-input {
+    border-left: 4px solid #3498db;
+    background-color: #fbfcfe;
+}
+
+/* KIEMELT FŐ HATÓANYAG */
+.main-active {
+    border: 2px solid #27ae60 !important;
+    background-color: #fafffa !important;
+    font-weight: bold;
 }
 
 input:focus {
@@ -97,11 +100,10 @@ input:focus {
     box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
-/* Helyes/Helytelen animációk */
+/* Helyes/Helytelen visszajelzés */
 .correct-style {
     border-color: #2ecc71 !important;
     background-color: #f0fff4 !important;
-    color: #1b5e20;
 }
 
 .wrong-style {
@@ -116,7 +118,7 @@ input:focus {
     75% { transform: translateX(5px); }
 }
 
-/* Gombok */
+/* Gombok konténere */
 .buttons {
     margin-top: 30px;
     display: flex;
@@ -131,7 +133,7 @@ button {
     font-weight: 700;
     font-size: 1rem;
     flex: 1;
-    transition: all 0.2s active;
+    transition: all 0.2s ease;
 }
 
 .check-btn {
@@ -159,38 +161,30 @@ button {
     color: #2c3e50;
 }
 
-/* Visszajelzés üzenet */
+/* Visszajelzés üzenet (Megoldókulcs) */
 .feedback {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 8px;
-    display: none; /* Alapértelmezetten rejtve, a JS kapcsolja be */
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
     line-height: 1.6;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
+    font-size: 15px;
+    border: 1px solid #d1dbd3;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-.correct-style {
-    border: 2px solid #28a745 !important;
-    background-color: #d4edda !important;
+/* Megoldókulcs címei */
+.feedback u {
+    color: #27ae60;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-.wrong-style {
-    border: 2px solid #dc3545 !important;
-    background-color: #f8d7da !important;
-}
-
-/* Kifejezetten a kategóriák címeihez a visszajelzésben */
-.feedback strong {
-    color: #333;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-/* Reszponzivitás mobilon */
-@media (max-width: 480px) {
+/* Reszponzivitás */
+@media (max-width: 600px) {
     .card { padding: 1.5rem; }
-    .input-grid { grid-template-columns: 1fr; }
+    .pair-wrapper { flex-direction: column; align-items: stretch; }
+    input { min-width: 100%; }
     .buttons { flex-direction: column; }
 }
