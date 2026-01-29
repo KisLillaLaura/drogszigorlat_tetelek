@@ -51,9 +51,9 @@ const botanicalData = {
             { d: "Graminis rhizoma", h: [{ név: "triticin", main: true }] },
             { d: "Arctii radix", h: [{ név: "inulin", main: true }] }
 	],
-	"Gomba poliszacharidok": [
-	    { d: "Shiitake", h:[{név: "kitin", main: false}, {név: "lentinán", main: true}]},
-	    { d: "Hasadtlemezű gomba", h:[{ név: "schizofillán", main: true}, {név: "kitin", main: false}]}
+		"Gomba poliszacharidok": [
+	    	{ d: "Shiitake", h:[{név: "kitin", main: false}, {név: "lentinán", main: true}]},
+	    	{ d: "Hasadtlemezű gomba", h:[{ név: "schizofillán", main: true}, {név: "kitin", main: false}]}
         ]
     },
     "Heteropoliszacharidok":{
@@ -294,11 +294,13 @@ const botanicalData = {
         ]
     },
     "Szívglikozidok": {
+		"szívglikozidok": [
             { d: "Digitalis purpureae folium", h: [{ név: "digitoxin", main: true }, { név: "purpureaglikozid A", main: false }] },
             { d: "Digitalis lanatae folium", h: [{ név: "digoxin", main: true }, { név: "lanatozid C", main: false }] },
             { d: "Convallariae folium", h: [{ név: "konvallatoxin", main: true }] }
 	        { d:"Strophanthi semen", h:[{név:"g-sztrofantin", main:true}, {név:"k-sztrofantin", main:true}]},
-	        { d:"Scillae bulbus", h:[{név:"szcillarein", main:true},{név:"proszcillain", main:true}]}]
+	        { d:"Scillae bulbus", h:[{név:"szcillarein", main:true},{név:"proszcillain", main:true}]}
+			]
     },
     "Fitoszterolok és ekdiszteroidok": {
         "Fitoszterolok": [
@@ -432,7 +434,7 @@ const botanicalData = {
     },
    
     "Lizin eredetű alkaloidok": {
-        "Piperidinvázas alkaloidok": [ {d:"Lobeliae herba", h:[{"lobelin", main:true}]}]
+        "Piperidinvázas alkaloidok": [ {d:"Lobeliae herba", h:[{név: "lobelin", main:true}]}]
     },
     "Fenilalanin eredetű alkaloidok": {
         "Aporfinvázas alkaloidok": [
