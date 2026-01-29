@@ -519,9 +519,9 @@ let currentTitle = "";
 
 function initGame() {
     const titles = Object.keys(botanicalData);
+    if (titles.length === 0) return;
+
     let newTitle;
-    
-    // Véletlenszerű cím választása, ne legyen ugyanaz, mint az előző
     do {
         newTitle = titles[Math.floor(Math.random() * titles.length)];
     } while (newTitle === currentTitle && titles.length > 1);
@@ -531,7 +531,10 @@ function initGame() {
     
     const area = document.getElementById('game-area');
     area.innerHTML = "";
-    document.getElementById('status-msg').style.display = "none";
+    
+    // Üzenet elrejtése
+    const msgBox = document.getElementById('status-msg');
+    msgBox.style.display = "none";
 
     const categories = botanicalData[currentTitle];
     
@@ -547,48 +550,41 @@ function initGame() {
             const wrapper = document.createElement('div');
             wrapper.className = 'pair-wrapper';
             
-            // 1. Drog input mező
             const dInput = document.createElement('input');
-            dInput.type = "text";
             dInput.className = "d-input";
             dInput.placeholder = "Drog latin neve";
             dInput.dataset.answer = item.d;
             wrapper.appendChild(dInput);
 
-            // 2. Hatóanyag input mezők generálása a tömbből
             item.h.forEach(hato => {
                 const hInput = document.createElement('input');
-                hInput.type = "text";
-                // Ha main: true, megkapja a speciális CSS osztályt
                 hInput.className = hato.main ? "h-input main-active" : "h-input";
-                hInput.placeholder = hato.main ? "Fő hatóanyag" : "Mellék hatóanyag";
+                hInput.placeholder = hato.main ? "Fő hatóanyag" : "Mellék";
                 hInput.dataset.answer = hato.név;
                 wrapper.appendChild(hInput);
             });
 
             grid.appendChild(wrapper);
         });
-
         section.appendChild(grid);
         area.appendChild(section);
     }
 }
 
 function checkAnswers() {
-    const inputs = document.querySelectorAll('.input-grid input');
+    const inputs = document.querySelectorAll('#game-area input');
     let totalCorrect = true;
 
     inputs.forEach(input => {
         const userVal = input.value.toLowerCase().trim();
         const correctVal = input.dataset.answer.toLowerCase().trim();
 
-        // Ellenőrzés: ha üres vagy rossz, piros lesz
         if (userVal === correctVal && userVal !== "") {
-            input.style.borderColor = "#27ae60";
-            input.style.backgroundColor = "#f0fff4";
+            input.classList.remove('wrong-style');
+            input.classList.add('correct-style');
         } else {
-            input.style.borderColor = "#e74c3c";
-            input.style.backgroundColor = "#fff5f5";
+            input.classList.remove('correct-style');
+            input.classList.add('wrong-style');
             totalCorrect = false;
         }
     });
@@ -597,23 +593,20 @@ function checkAnswers() {
     msg.style.display = "block";
     
     if (totalCorrect) {
-        msg.innerHTML = "<b style='color:green'>Tökéletes! Minden drog és hatóanyag helyes.</b>";
+        msg.innerHTML = "<b style='color:#27ae60'>Tökéletes! Minden válasz helyes.</b>";
     } else {
-        // Megoldókulcs generálása a hibázóknak
         let solutionText = "<b>Helyes válaszok:</b><br>";
         const categories = botanicalData[currentTitle];
         for (let cat in categories) {
-            solutionText += `<br><u>${cat}:</u><br>`;
+            solutionText += `<br><u>${cat}</u>:<br>`;
             categories[cat].forEach(item => {
-                const hatóanyagok = item.h.map(h => h.main ? `<b>${h.név}</b>` : h.név).join(", ");
-                solutionText += `• ${item.d}: ${hatóanyagok}<br>`;
+                const hatoNevek = item.h.map(h => h.main ? `<b>${h.név}</b>` : h.név).join(", ");
+                solutionText += `• ${item.d}: ${hatoNevek}<br>`;
             });
         }
-        msg.innerHTML = `<span style='color:#c0392b'>Hibás válasz(ok)! Segítség lent:</span><br>${solutionText}`;
+        msg.innerHTML = `<span style='color:#e74c3c'>Hiba van a válaszok között!</span><br>${solutionText}`;
     }
-    // Gördülés az üzenethez
-    msg.scrollIntoView({ behavior: 'smooth' });
 }
 
-// Indítás az oldal betöltésekor
-document.addEventListener('DOMContentLoaded', initGame);
+// Inicializálás
+window.onload = initGame;
