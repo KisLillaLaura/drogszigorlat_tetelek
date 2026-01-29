@@ -2,23 +2,30 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <title>Drogismeret Kvíz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmakognózia Szigorlat Gyakorló</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <h1>🌿Drog szigorlat tételgyakorló</h1>
+        
+        <div class="header-box">
+            <p>Töltsd ki a latin drogneveket és a hatóanyagokat!</p>
+            <h2 id="tetel-cim">Betöltés...</h2>
+            </div>
 
-<div class="card">
-    <h1 id="tetel-cim">Betöltés...</h1>
-    <div id="game-area"></div>
-    
-    <div class="buttons">
-        <button class="check-btn" onclick="checkAnswers()">Ellenőrzés</button>
-        <button class="next-btn" onclick="initGame()">Következő tétel</button>
+        <div id="game-area">
+            </div>
+
+        <div class="button-group">
+            <button onclick="checkAnswers()" class="btn-check">Ellenőrzés</button>
+            <button onclick="initGame()" class="btn-next">Új tétel</button>
+        </div>
+
+        <div id="status-msg" class="message-box" style="display: none;"></div>
     </div>
-    
-    <div id="status-msg" class="feedback"></div>
-</div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
