@@ -92,24 +92,24 @@ const botanicalData = {
 	    {d:"Uvae ursi folium", h: [{név: "arbutin", main:true}]}
 	],
         "Szalicilglikozidok": [
-	    {d:"Salicis cortex", h:[{név: "szalicilsav", main:true}]}, 
-	    {d: "Filipendulae ulmariae herba", h:[{név:"acetil-szalicilsav", main:true}]}
+	    {d:"Salicis cortex", h:[{név: "szalicin", main:true}, {név: "szalikortin", main:true}]}, 
+	    {d: "Filipendulae ulmariae herba", h:[{név:"monotropin", main:true}, {név: "spireozid", main:false}]}
 	],
         "Benzoesav- és fahéjsavészterek": [
 	    {d:"Benzoe-drogok", h:[{név: "benzoesav", main:true}]}, 
-	    {d:"Balsamum peruvianum", h:[{név: "farnezol", main:true}, {név: "benzil-benzoát", main:false}, {név: "vannillin", main: false}]}
+	    {d:"Balsamum peruvianum", h:[{név: "farnezol", main:false}, {név: "benzil-cinnamát", main:true}, {név: "benzil-benzoát", main:true}, {név: "vannillin", main: false}]}
 	],
         "Kávésavszármazékok és drogjaik": [
-	    {d:"Cynarae folium", h:[{név: "cinarin", main: true}, {név:"klorogénsav", main:true}, {név:"cinaropikrin", main:true}]}, 
-	    {d: "Taraxaci officinalis herba cum radice", h:[{név:"Klorogénsav", main:true}, {név:"cinarin", main:true}, {név:"cirkónia", main:true}]}, 
-	    {d:"Melissae folium", h:[{név:"rozmaringsav", main:true}, {név:"klorogénsav", main:true}]},
+	    {d:"Cynarae folium", h:[{név: "cinarin", main: true}, {név:"klorogénsav", main:true}, {név:"cinaropikrin", main:false}]}, 
+	    {d: "Taraxaci officinalis herba cum radice", h:[{név:"Klorogénsav", main:true}]}, 
+	    {d:"Melissae folium", h:[{név:"rozmaringsav", main:true}, {név:"meritirinsav", main:true}]},
  	    {d: "Rosmarini folium", h:[{név:"rozmaringsav", main:true}, {név:"szekszviterpén-lakotonok", main:true}]}, 
 	    {d: "Rhodiolae roseae rhizoma et radix", h:[{név:"rozin", main:true}, {név:"szalidrozid", main:true}]},
- 	    {d:"Echinacea-drogok", h:[{név: "cikória", main:true}, {név:"echinakozid", main:true}, {név:"cinarin", main:true}]}]
+ 	    {d: "Echinacea-drogok", h:[{név: "cikória", main:true}, {név:"echinakozid", main:true}, {név:"cinarin", main:true}]}]
     },
     "Lignánok": {
         "Lignánok": [
-	    {d:"Eleutherococci radix",h:[{név:"di-sziringarezol", main:true}]}, 
+	    {d:"Eleutherococci radix",h:[{név:"sziringarezinol-diglükozid", main:true}, {név: "sziringin", main:false}, {név:" klorogénsav", main:false}]}, 
 	    {d:"Podophylli peltati rhizoma", h:[{név:"podofillotoxin", main:true}]}, 
 	    {d:"Schisandrae chinensis fructus", h:[{név:"szkizandrin", main:true}]}, 
 	    {d:"Arctii radix", h:[{név:"arctiin", main:true}, {név:"arctigenin", main:true}]}]
@@ -140,12 +140,12 @@ const botanicalData = {
     "Flavonoidok": {
         "Flavon-O-glikozidok": [
             { d: "Fagopyri herba", h: [{ név: "rutin", main: true }] },
-            { d: "Sophorae japonicae flos", h: [{ név: "rutin", main: true }, { név: "kvercetin", main: false }] },
-            { d: "Ginkgonis folium", h: [{ név: "kvercetin", main: true }, { név: "ginkgolid", main: false }] },
+            { d: "Sophorae japonicae flos", h: [{ név: "rutin", main: true }] },
+            { d: "Ginkgonis folium", h: [{ név: "kvercetin", main: true }, { név: "ginkgolid", main: false }, {név: "bilobetin", main:true] },
             { d: "Betulae folium", h: [{ név: "hiperozid", main: true }] },
-            { d: "Solidaginis herba", h: [{ név: "rutin", main: true }, { név: "leiokarpozid", main: false }] },
-            { d: "Tiliae flos", h: [{ név: "tilirozid", main: true }, { név: "illóolaj", main: false }] },
-            { d: "Sambuci flos", h: [{ név: "rutin", main: true }, { név: "szambunigrin", main: false }] }
+            { d: "Solidaginis herba", h: [{ név: "rutin", main: true }] },
+            { d: "Tiliae flos", h: [{ név: "tilirozid", main: true }, { név: "illóolaj", main: false }, { név: "nyálka", main: false }] },
+            { d: "Sambuci flos", h: [{ név: "rutin", main: true }] }
         ],
         "Flavon-C-glikozidok": [
             { d: "Crataegi folium cum flore", h: [{ név: "vitexin", main: true }, { név: "hiperozid", main: false }] },
@@ -160,29 +160,29 @@ const botanicalData = {
     },
     "Különleges szerkezetű flavonoidok": {
         "Izoflavonoidok": [
-            { d: "Ononidis radix", h: [{ név: "ononin", main: true }, { név: "formononetin", main: false }] },
-            { d: "Liquiritiae radix", h: [{ név: "likviricid", main: true }, { név: "glicirrizin", main: false }] },
-            { d: "Glycini semen", h: [{ név: "genisztein", main: true }, { név: "daidzein", main: false }] }
+            { d: "Ononidis radix", h: [{ név: "ononin", main: true }] },
+            { d: "Liquiritiae radix", h: [{ név: "likokalkon A", main: false }, { név: " izolikviricigenin", main: false }, { név: "glicirrizin", main: false }, {név: "glabridin", main:true}] },
+            { d: "Glycini semen", h: [{ név: "genisztein", main: true }, { név: "daidzein", main: true}] }
         ],
         "Kalkonok és Antocianinok": [
-            { d: "Carthami flos", h: [{ név: "kartamin", main: true }] },
-            { d: "Myrtilli fructus recens", h: [{ név: "mirtillin", main: true }, { név: "cianidin", main: false }] },
-            { d: "Hibisci sabdariffae flos", h: [{ név: "delfinidin", main: true }, { név: "hibiszkuszsav", main: false }] }
+            { d: "Carthami flos", h: [{ név: "kartamin", main: true }, { név: "szafrolsárga", main: true }] },
+            { d: "Myrtilli fructus recens", h: [{ név: "antociannin", main: true }, { név: "cianidin", main: false }] },
+            { d: "Hibisci sabdariffae flos", h: [{ név: "antocianin", main: true }, { név: "hibiszkuszsav", main: false }] }
         ],
         "Flavanolignánok": [
-            { d: "Silybi mariani fructus", h: [{ név: "szilimarin", main: true }, { név: "szilibinin", main: false }] }
+            { d: "Silybi mariani fructus", h: [{ név: "szilikrisztin", main: true }, { név: "szilibinin", main: false }] }
         ]
     },
     "Cserzőanyagok": {
         "Hidrolizálható cserzőanyagok": [
-            { d: "Quercus cortex", h: [{ név: "kvercitannin", main: true }, { név: "ellágsav", main: false }] },
+            { d: "Quercus cortex", h: [{ név: "gallotannin", main: true }, { név: "ellagotannin", main: false }] },
             { d: "Hamamelidis cortex", h: [{ név: "hamamelitannin", main: true }] },
             { d: "Rubi idaei folium", h: [{ név: "gallotannin", main: true }] }
         ],
         "Proantocianidinek": [
-            { d: "Agrimoniae herba", h: [{ név: "katechin", main: true }, { név: "agrimoniin", main: false }] },
-            { d: "Tormentillae rhizoma", h: [{ név: "tormentillin", main: true }] },
-            { d: "Ratanhiae radix", h: [{ név: "ratanhia-vörös", main: true }] },
+            { d: "Agrimoniae herba", h: [{ név: "procianidin", main: true }, { név: "agrimoniin", main: false }] },
+            { d: "Tormentillae rhizoma", h: [{ név: "agrimoniin", main: true }] },
+            { d: "Ratanhiae radix", h: [{ név: "procianidin", main: true }] },
             { d: "Vaccinii macrocarpi fructus", h: [{ név: "A-típusú proantocianidin", main: true }] }
         ]
     },
@@ -192,15 +192,15 @@ const botanicalData = {
             { d: "Lawsoniae herba", h: [{ név: "lavszon", main: true }] }
         ],
  	"Naftodiantronok": [
-	    { d: "Hyperici herba", h: [{ név: "hipericin", main: true }, { név: "hiperforin", main: false }] }
+	    { d: "Hyperici herba", h: [{ név: "hipericin", main: true }, { név: "hiperforin", main: false }, {név:"hiperozid", main:false}] }
 	]
     },
     "Antraglikozidok": {
         "Antraglikozidok": [
-            { d: "Sennae foliolum", h: [{ név: "szennozid A+B", main: true }, { név: "reum-emodin", main: false }] },
-            { d: "Frangulae cortex", h: [{ név: "glükof rángulin", main: true }, { név: "frangulin", main: false }] },
+            { d: "Sennae foliolum", h: [{ név: "szennozid A+B", main: true }] },
+            { d: "Frangulae cortex", h: [{ név: "frangulin A+B", main: true }] },
             { d: "Rhei radix", h: [{ név: "reum-emodin", main: true }, { név: "aloin", main: false }] },
-            { d: "Aloe-drogok", h: [{ név: "aloin", main: true }, { név: "aloe-emodin", main: false }] },
+            { d: "Aloe-drogok", h: [{ név: "aloin", main: true }, {név:"reinozid", main:true}] },
             { d: "Rhamni purshianae cortex", h: [{ név: "kaszkarozid", main: true }] }
         ]
     },
