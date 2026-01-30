@@ -1,7 +1,7 @@
 const botanicalData = {
     "Savanyagcsere, savdrogok": {
         "Szerves savak": [
-            { d: "Pulpa tamarindorum", h: [{ név: "borkősav", main: true }, { név: "citromsav", main: false }] },
+            { d: "Pulpa tamarindorum", h: [{ név: "borkősav", main: true }] },
             { d: "Rosae pseudo-fructus", h: [{ név: "aszkorbinsav", main: true }, { név: "pectin", main: false }] },
             { d: "Hippophaeae fructus", h: [{ név: "aszkorbinsav", main: true }, { név: "karotinoidok", main: false }] },
             { d: "Malpighiae fructus", h: [{ név: "aszkorbinsav", main: true }] },
