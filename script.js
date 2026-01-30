@@ -79,11 +79,11 @@ const botanicalData = {
         ],
         "Élelmi rostok": [
             { d: "Lini semen", h: [{ név: "nyálka", main: true }, { név: "linamarin", main: false }] },
-            { d: "Trigonellae foenugraeci semen", h: [{ név: "galaktomannán", main: true }, { név: "trigonellin", main: false }] },
-            { d: "Psyllii semen", h: [{ név: "xilóz", main: true }] },
-            { d: "Plantaginis ovatae semen", h: [{ név: "arabinoxilán", main: true }] },
-            { d: "Salviae hispanicae semen", h: [{ név: "nyálka", main: true }] },
-            { d: "Cyamopsidis seminis pulvis", h: [{ név: "guar-gumi", main: true }] }
+            { d: "Trigonellae foenugraeci semen", h: [{ név: "nyálka", main: true }, { név: "szteroid szaponinok", main: false }] },
+            { d: "Psyllii semen", h: [{ név: "xilóz", main: false }, {név: "nyálka", main:true}] },
+            { d: "Plantaginis ovatae semen", h: [{ név: "nyálka", main: true }] },
+            { d: "Salviae hispanicae semen", h: [{ név: "nyálka", main: true }, {név:"rostok", main:false}] },
+            { d: "Cyamopsidis seminis pulvis", h: [{ név: "guarán", main: true }] }
         ]
     },
     "Degradált fahéjsavszármazékok és drogjaik": {
