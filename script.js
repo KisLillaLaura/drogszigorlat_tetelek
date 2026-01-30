@@ -47,10 +47,10 @@ const botanicalData = {
             { d: "Maydis amylum ", h: [{ név: "amilóz", main: true }, { név: "amilopektin", main: true }] }
         ],
         "Fruktánok": [
-            { d: "Taraxaci officinalis radix", h: [{ név: "inulin", main: true }, { név: "taraxacosid", main: false }] },
+            { d: "Taraxaci officinalis radix", h: [{ név: "inulin", main: true }, { név: "szeszkviterpén-lakton", main: false }] },
             { d: "Cichorii intybi radix", h: [{ név: "inulin", main: true }] },
-            { d: "Graminis rhizoma", h: [{ név: "triticin", main: true }] },
-            { d: "Arctii radix", h: [{ név: "inulin", main: true }] }
+            { d: "Graminis rhizoma", h: [{ név: "triticin", main: true }, {név:"nyálka", main:false}, {név:"mannitol", main:false}] },
+            { d: "Arctii radix", h: [{ név: "inulin", main: true }, {név:" nyálka", main:false}] }
 	],
 		"Gomba poliszacharidok": [
 	    	{ d: "Shiitake", h:[{név: "kitin", main: false}, {név: "lentinán", main: true}]},
@@ -73,7 +73,7 @@ const botanicalData = {
         "Nyálka poliszacharidok": [
             { d: "Lichen islandicus", h: [{ név: "lichenin", main: true }, { név: "izolichenin", main: false }] },
             { d: "Althaeae radix", h: [{ név: "nyálka", main: true }, { név: "keményítő", main: false }] },
-            { d: "Althaeae folium", h: [{ név: "nyálka", main: true }, { név: "flavonoid", main: false }] },
+            { d: "Althaeae folium", h: [{ név: "nyálka", main: true }] },
             { d: "Malvae folium", h: [{ név: "nyálka", main: true }] },
             { d: "Malvae sylvestris flos", h: [{ név: "nyálka", main: true }, { név: "antocianin", main: false }] }
         ],
