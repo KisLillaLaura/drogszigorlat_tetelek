@@ -43,8 +43,8 @@ const botanicalData = {
     },
     "Homopoliszacharidok": {
         "Glükánok": [
-            { d: "Amylum solani", h: [{ név: "amilóz", main: true }, { név: "amilopektin", main: false }] },
-            { d: "Amylum maydis", h: [{ név: "amilopektin", main: true }] }
+            { d: "Solani amylum ", h: [{ név: "amilóz", main: true }, { név: "amilopektin", main: true }] },
+            { d: "Maydis amylum ", h: [{ név: "amilóz", main: true }, { név: "amilopektin", main: true }] }
         ],
         "Fruktánok": [
             { d: "Taraxaci officinalis radix", h: [{ név: "inulin", main: true }, { név: "taraxacosid", main: false }] },
