@@ -38,7 +38,7 @@ const botanicalData = {
             { d: "Oenotherae oleum", h: [{ név: "gamma-linolénsav", main: true }] }
         ],
         "Különleges zsírsavakat tartalmazó": [
-            { d: "Ricini oleum", h: [{ név: "ricinolsav", main: true }, { név: "ricin", main: false }] }
+            { d: "Ricini oleum", h: [{ név: "ricinolsav", main: true }, { név: "ricin", main: false }, { név: "ricinin", main: false }] }
         ]
     },
     "Homopoliszacharidok": {
