@@ -300,8 +300,8 @@ const botanicalData = {
     },
   "Szívglikozidok": {
       "szívglikozidok": [
-          { d: "Digitalis purpureae folium", h: [{ név: "digitoxin", main: true }, { név: "purpureaglikozid A", main: false }] },
-          { d: "Digitalis lanatae folium", h: [{ név: "digoxin", main: true }, { név: "lanatozid C", main: false }] },
+          { d: "Digitalis purpureae folium", h: [{ név: "purpureaglikozid B", main: true }, { név: "purpureaglikozid A", main: true }] },
+          { d: "Digitalis lanatae folium", h: [{ név: "lanatozid A", main: true }, { név: "lanatozid B", main: true }, { név: "lanatozid C", main: true }] },
           { d: "Convallariae folium", h: [{ név: "konvallatoxin", main: true }] }, // <--- ITT VOLT A HIBA (hiányzó vessző)
           { d: "Strophanthi semen", h: [{ név: "g-sztrofantin", main: true }, { név: "k-sztrofantin", main: true }] }, // <--- ITT IS HIÁNYZOTT
           { d: "Scillae bulbus", h: [{ név: "szcillarein", main: true }, { név: "proszcillain", main: true }] }
@@ -310,11 +310,11 @@ const botanicalData = {
     "Fitoszterolok és ekdiszteroidok": {
         "Fitoszterolok": [
             { d: "Pruni africanae cortex", h: [{ név: "béta-szitoszterol", main: true }] },
-            { d: "Sabalis serrulatae fructus", h: [{ név: "szitoszterol", main: true }, { név: "zsírsavak", main: false }] },
-            { d: "Cucurbitae semen", h: [{ név: "kukurbitin", main: true }, { név: "szitoszterol", main: false }] },
-            { d: "Urticae radix", h: [{ név: "szitoszterol-glikozid", main: true }, { név: "szkopoletin", main: false }] },
-            { d: "Epilobii herba", h: [{ név: "miriticetin-glikozid", main: true }, { név: "szitoszterol", main: false }] },
-            { d: "Cimicifugae rhizoma", h: [{ név: "aktein", main: true }, { név: "cimicifugozid", main: false }] }
+            { d: "Sabalis serrulatae fructus", h: [{ név: "béta-szitoszterol", main: true }] },
+            { d: "Cucurbitae semen", h: [{ név: "aveneszterin", main: true }, { név: "béta-szitoszterol", main: false }] },
+            { d: "Urticae radix", h: [{ név: "béta-szitoszterol", main: true }] },
+            { d: "Epilobii herba", h: [{ név: "oenotein A+B", main: false }, { név: "béta-szitoszterol", main: true }] },
+            { d: "Cimicifugae rhizoma", h: [{ név: "cimcigenin", main: true }] }
         ],
         "Ekdiszteroidok": [
             { d: "Leuzeae radix", h: [{ név: "ekdiszteron", main: true }] }
@@ -392,21 +392,21 @@ const botanicalData = {
     },
     "Triptofán eredetű alkaloidok": {
         "Egyszerű indolvázas alkaloidok": [
-            { d: "Physostigmae semen", h: [{ név: "fizostigmin", main: true }] }
+            { d: "Physostigmae semen", h: [{ név: "fizosztigmin", main: true }] }
         ],
         "Hemiterpenoid indolvázas alkaloidok": [
-            { d: "Secale cornutum", h: [{ név: "ergotamin", main: true }, { név: "ergometrin", main: false }] }
+            { d: "Secale cornutum", h: [{ név: "ergotamin", main: true }, { név: "ergometrin", main: true }] }
         ],
         "Monoterpenoid indolvázas alkaloidok": [
-            { d: "Rauwolfiae radix", h: [{ név: "rezerpin", main: true }, { név: "ajmalin", main: false }] },
-            { d: "Vincae minoris herba", h: [{ név: "vinkamin", main: true }] },
-            { d: "Uncaria-drogok", h: [{ név: "mitrafillin", main: true }, { név: "izomitrafillin", main: false }] },
-            { d: "Catharanthi rosei herba", h: [{ név: "vinblasztin", main: true }, { név: "vinkrisztin", main: false }] },
-            { d: "Strychni semen", h: [{ név: "sztrichnin", main: true }, { név: "brucin", main: false }] },
+            { d: "Rauwolfiae radix", h: [{ név: "reszerpin", main: true }, { név: "ajmalin", main: true }, { név: "szerpentin", main: true }, { név: "ajmalicin", main: true }] },
+            { d: "Vincae minoris herba", h: [{ név: "vinkamin", main: true }, { név: "vinkadifformin", main: true }] },
+            { d: "Uncaria cortex", h: [{ név: "rinkofillin", main: true }, { név: "izorinkofillin", main: false }] },
+            { d: "Catharanthi rosei herba", h: [{ név: "vinblasztin", main: true }, { név: "vinkrisztin", main: true }] },
+            { d: "Strychni semen", h: [{ név: "sztrichnin", main: true }, { név: "brucin", main: true }] },
             { d: "Loganiaceae-Curare", h: [{ név: "tubokurarin", main: true }] }
         ],
         "Monoterpenoid kinolinvázas alkaloidok": [
-            { d: "Cinchonae cortex", h: [{ név: "kinin", main: true }, { név: "kinidin", main: false }, { név: "cinkonin", main: false }] }
+            { d: "Cinchonae cortex", h: [{ név: "kinin", main: true }, { név: "kinidin", main: true }, { név: "cinkonin", main: true }, { név: "cinkonidin", main: true }] }
         ]
     },
 
@@ -415,27 +415,27 @@ const botanicalData = {
             { d: "Echinacea-drogok", h: [{ név: "alkamidok", main: true }, { név: "cikóriasav", main: false }] }],
 	    
 	    "Lektinek": [
-            { d: "Visci albae herba", h: [{ név: "viszkotoxin", main: true }, { név: "lektinek", main: false }] }
+            { d: "Visci albae herba", h: [{ név: "viszkotoxin", main: false }, { név: "lektinek", main: true }] }
         ],
         "Növényi enzimek": [
             { d: "Carica papaya", h: [{ név: "papain", main: true }] },
-            { d: "Ananas comosus", h: [{ név: "bromelain", main: true }] }
+            { d: "Ananas comosus", h: [{ név: "bromelain", main: true }] },
+			{ d: "Ficus sp.", h:[{név:"ficin", main:true}]}
         ]
     },
     "Ornitin eredetű alkaloidok": {
         "Tropánvázas alkaloidok": [
-            { d: "Belladonnae folium", h: [{ név: "L-hioszciamin", main: true }, { név: "atropin", main: false }] },
-            { d: "Stramonii folium", h: [{ név: "szkopolamin", main: true }, { név: "hioszciamin", main: false }] },
-            { d: "Hyoscyami folium", h: [{ név: "hioszciamin", main: true }, { név: "szkopolamin", main: false }] },
-            { d: "Cocae folium", h: [{ név: "kokain", main: true }, { név: "kuszkhigrin", main: false }] }
+            { d: "Belladonnae folium", h: [{ név: "L-hioszciamin", main: true }, { név: "szkopolamin", main: true }, { név: "atropin", main: true }] },
+            { d: "Stramonii folium", h: [{ név: "szkopolamin", main: true }, { név: "L-hioszciamin", main: true }] },
+            { d: "Cocae folium", h: [{ név: "kokain", main: true }] }
         ],
         "Pirrolizidinvázas alkaloidok": [
             { d: "Symphyti radix", h: [{ név: "allantoin", main: true }, { név: "szimfitin", main: false }] },
-            { d: "Farfarae folium", h: [{ név: "szenecionin", main: true }, { név: "tusszilagin", main: false }] },
-	    { d: "Boraginis herba", h: [{ név:"likopszamin", main:true}]}
+            { d: "Farfarae folium", h: [{ név: "szenkirkin", main: true }, { név: "nyálka", main: false }] },
+	    	{ d: "Boraginis herba", h: [{ név:"likopszamin", main:true}]}
          ],        
 	"Pirrolidinvázas alkaloidok": [
-	    { d: "Nicotianae folium", h: [{ név: "nikotin", main: true }, { név: "anabazin", main: false }] }]
+	    	{ d: "Nicotianae folium", h: [{ név: "nikotin", main: true }, { név: "anabazin", main: true }, { név: "nornikotin", main: true }] }]
     },
    
     "Lizin eredetű alkaloidok": {
@@ -443,11 +443,11 @@ const botanicalData = {
     },
     "Fenilalanin eredetű alkaloidok": {
         "Aporfinvázas alkaloidok": [
-            { d: "Boldi folium", h: [{ név: "boldin", main: true }, { név: "illóolaj", main: false }] }
+            { d: "Boldi folium", h: [{ név: "boldin", main: true }, { név: "aszkaridol", main: false }] }
         ],
         "Morfinánvázas alkaloidok": [
-            { d: "Papaveris maturi fructus", h: [{ név: "morfin", main: true }, { név: "narkotin", main: false }] },
-            { d: "Opium crudum", h: [{ név: "morfin", main: true }, { név: "kodein", main: false }, { név: "tebain", main: false }] }
+            { d: "Papaveris maturi fructus", h: [{ név: "morfin", main: true }, { név: "kodein", main: true } , { név: "papaverin", main: false }, { név: "noszkapin", main: false }] },
+            { d: "Opium crudum", h: [{ név: "morfin", main: true }, { név: "kodein", main: true }, { név: "tebain", main: false }, { név: "mekonsav", main: false }] }
         ]
     },
     "Hisztidin eredetű alkaloidok": {
@@ -457,15 +457,15 @@ const botanicalData = {
     },
     "Izokinolinvázas alkaloidok": {
         "Protoberberin": [
-            { d: "Chelidonii herba", h: [{ név: "keleritrin", main: true }, { név: "berberin", main: false }, { név: "kelidonin", main: false }] },
-            { d: "Fumariae herba", h: [{ név: "fumarin", main: true }, { név: "fumarinsav", main: false }] },
-            { d: "Hydrastis rhizoma", h: [{ név: "hidrasztin", main: true }, { név: "berberin", main: false }] }
+            { d: "Chelidonii herba", h: [{ név: "szangvinarin", main: true }, { név: "berberin", main: true }, { név: "kelidonin", main: true }, { név: "koptizin", main: true }] },
+            { d: "Fumariae herba", h: [{ név: "fumarin", main: true }, { név: "szangvinarin", main: true }] },
+            { d: "Hydrastis rhizoma", h: [{ név: "hidrasztin", main: true }, { név: "noszkapin", main: true }] }
         ],
         "Biszbenzil-izokinolin-vázas alkaloidok": [
             { d: "Menispermeaceae-Curare", h: [{ név: "tubokurarin", main: true }] }
         ],
         "Monoterpenoid izokinolin-vázas alkaloidok": [
-            { d: "Ipecacuanhae radix", h: [{ név: "emetin", main: true }, { név: "cefaelin", main: false }] }
+            { d: "Ipecacuanhae radix", h: [{ név: "emetin", main: true }, { név: "cefelin", main: false }] }
         ]
     },
     "Fenilalanin eredetű protoalkaloidok": {
@@ -475,8 +475,8 @@ const botanicalData = {
     },
     "Pszeudoalkaloidok": {
         "β-Amino-fenil-propánvázas alkaloidok": [
-            { d: "Ephedrae herba", h: [{ név: "efedrin", main: true }, { név: "pszeudoefedrin", main: false }] },
-            { d: "Cathae edulis folium", h: [{ név: "katinon", main: true }, { név: "katin", main: false }] }
+            { d: "Ephedrae herba", h: [{ név: "efedrin", main: true }, { név: "pszeudoefedrin", main: true }] },
+            { d: "Cathae edulis folium", h: [{ név: "katinon", main: true }, { név: "katedulin", main: false }] }
         ],
         "Benzil-aminvázas proto-pszeudo alkaloidok": [
             { d: "Capsici fructus", h: [{ név: "kapszaicin", main: true }, { név: "dihidrokapszaicin", main: false }] }
@@ -490,9 +490,9 @@ const botanicalData = {
             { d: "Conii fructus", h: [{ név: "koniin", main: true }] }
         ],
         "Purinvázas alkaloidok": [
-            { d: "Camelliae sinensis non fermentata folia", h: [{ név: "koffein", main: true }, { név: "teogallin", main: false }] },
+            { d: "Camelliae sinensis non fermentata folia", h: [{ név: "koffein", main: true }, { név: "EPGC", main: false }, { név: "teofillin", main: true} ] },
             { d: "Mate folium", h: [{ név: "koffein", main: true }, { név: "klorogénsav", main: false }] },
-            { d: "Cacao semen", h: [{ név: "teobromin", main: true }, { név: "koffein", main: false }] },
+            { d: "Cacao semen", h: [{ név: "teobromin", main: true }, { név: "koffein", main: true }] },
             { d: "Coffeae semen", h: [{ név: "koffein", main: true }, { név: "klorogénsav", main: false }] },
             { d: "Colae semen", h: [{ név: "koffein", main: true }] },
             { d: "Guaranae semen", h: [{ név: "koffein", main: true }, { név: "tannin", main: false }] }
@@ -501,25 +501,25 @@ const botanicalData = {
 
     "Terpén eredetű pszeudoalkaloidok és Glikozidok": {
         "Diterpén alkaloidok": [
-            { d: "Aconiti tuber", h: [{ név: "akonitin", main: true }, { név: "napellin", main: false }] },
-            { d: "Taxi cortex", h: [{ név: "taxol", main: true }, { név: "baccatin III", main: false }] }
+            { d: "Aconiti tuber", h: [{ név: "akonitin", main: true }] },
+            { d: "Taxi cortex", h: [{ név: "taxol", main: true }] }
         ],
         "Szteroid alkaloidok": [
-            { d: "Dulcamarae stipes", h: [{ név: "szoladulcin", main: true }, { név: "szolanin", main: false }] },
+            { d: "Dulcamarae stipes", h: [{ név: "szolanidin", main: true }, { név: "szolaszodin", main: true }, { név: "tomatidin", main: true }] },
             { d: "Solani nigri herba", h: [{ név: "szolanin", main: true }, { név: "szolamargin", main: false }] },
             { d: "Veratri rhizoma et radix", h: [{ név: "veratrin", main: true }, { név: "jervin", main: false }] }
         ],
         "Cianogén glikozidok": [
-            { d: "Amygdalae semen", h: [{ név: "amygdalin", main: true }, { név: "emulzin", main: false }] },
+            { d: "Amygdalae semen", h: [{ név: "amygdalin", main: true }] },
             { d: "Pruni armeniacae semen", h: [{ név: "amygdalin", main: true }] }
         ],
         "Mustárolaj-glikozidok": [
-            { d: "Sinapis nigrae semen", h: [{ név: "szinigrin", main: true }, { név: "mirozin", main: false }] },
+            { d: "Sinapis nigrae semen", h: [{ név: "szinigrin", main: true }] },
             { d: "Sinapis albae semen", h: [{ név: "szinalbin", main: true }] }
         ],
         "Egyéb kéntartalmú vegyületek": [
             { d: "Allii sativi bulbus", h: [{ név: "alliin", main: true }, { név: "allicin", main: false }] },
-            { d: "Allii cepae bulbus", h: [{ név: "cikloalliin", main: true }, { név: "kvercetin", main: false }] }
+            { d: "Allii cepae bulbus", h: [{ név: "izoalliin", main: true }] }
         ]
 
    
