@@ -10,7 +10,7 @@ const botanicalData = {
         ],
         "Szervetlen savak": [
             { d: "Urticae folium", h: [{ név: "kovasav", main: true }, { név: "klorofill", main: false }] },
-            { d: "Equiseti herba", h: [{ név: "kovasav", main: true }] }
+            { d: "Equiseti herba", h: [{ név: "kovasav", main: true }, {név: " szilikátok", main:false}] }
         ]
     },
     "Zsíros olajok": {
