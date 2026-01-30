@@ -5,7 +5,7 @@ const botanicalData = {
             { d: "Rosae pseudo-fructus", h: [{ név: "aszkorbinsav", main: true }, { név: "pektin", main: false }] },
             { d: "Hippophaeae fructus", h: [{ név: "aszkorbinsav", main: true }, { név: "karotinoidok", main: false }] },
             { d: "Malpighiae fructus", h: [{ név: "aszkorbinsav", main: true }] },
-            { d: "Hibisci sabdariffae flos", h: [{ név: "hibiszkuszsav", main: true }, { név: "antocianin", main: false }] }
+            { d: "Hibisci sabdariffae flos", h: [{ név: "hibiszkuszsav", main: true }, { név: "antocianin", main: false }, {név:"aszkorbinsav", main:true}] }
         ],
         "Szervetlen savak": [
             { d: "Urticae folium", h: [{ név: "kovasav", main: true }, { név: "klorofill", main: false }] },
