@@ -141,7 +141,7 @@ const botanicalData = {
         "Flavon-O-glikozidok": [
             { d: "Fagopyri herba", h: [{ név: "rutin", main: true }] },
             { d: "Sophorae japonicae flos", h: [{ név: "rutin", main: true }] },
-            { d: "Ginkgonis folium", h: [{ név: "kvercetin", main: true }, { név: "ginkgolid", main: false }, {név: "bilobetin", main:true] },
+            { d: "Ginkgonis folium", h: [{ név: "kvercetin", main: true }, { név: "ginkgolid", main: false }, {név: "bilobetin", main:true}] },
             { d: "Betulae folium", h: [{ név: "hiperozid", main: true }] },
             { d: "Solidaginis herba", h: [{ név: "rutin", main: true }] },
             { d: "Tiliae flos", h: [{ név: "tilirozid", main: true }, { név: "illóolaj", main: false }, { név: "nyálka", main: false }] },
@@ -215,12 +215,12 @@ const botanicalData = {
     "Mérges gombák": {
         "Alacsonyabb rendű gombák": [
 	    {d:"Aspergillus sp.", h:[{név:"aflatoxinok", main: true}]},
-            {d:"Fusarium sp", h:[{név:"doexinivalenol", main: false}, {név:"zearelanon", main: false}, {név:"fumonizin", main: false}]}
+        {d:"Fusarium sp", h:[{név:"doexinivalenol", main: false}, {név:"zearelanon", main: false}, {név:"fumonizin", main: false}]}
 	],
         "Kalapos gombák": [
 	    {d:"gyilkos galóca", h:[{név:"amatoxin", main: false}, {név:"fallotoxin", main:false}, {név: "virotoxin", main: false}]}, 
 	    {d:"párducgalóca", h:[{ név: "muscimol", main: false}, {név:"muszkaron", main: false}, {név:"iboténsav", main: false}]},
-            {d:"ráncos tintagomba", h:[{név:"diszulfirám", main: true}, {név: "koprin", main: false}]},
+        {d:"ráncos tintagomba", h:[{név:"diszulfirám", main: true}, {név: "koprin", main: false}]},
 	    {d:"Psilocybe sp.", h:[{ név:"pszilocibin", main: true}]}]
     },
     "Gyógygombák": {
@@ -232,23 +232,23 @@ const botanicalData = {
     },
     "Monoterpén illóolajok": {
         "Aciklusos monoterpének": [
-            { d: "Lavandulae flos", h: [{ név: "linalil-acetát", main: true }, { név: "linalool", main: false }] },
-            { d: "Coriandri fructus", h: [{ név: "linalool", main: true }, { név: "geraniol", main: false }] },
-            { d: "Melissae folium", h: [{ név: "citrál", main: true }, { név: "citronellál", main: false }] },
-            { d: "Aurantii amari flos", h: [{ név: "linalool", main: true }, { név: "limonén", main: false }] },
+            { d: "Lavandulae flos", h: [{ név: "linalil-acetát", main: true }, { név: "R-linalool", main: true }] },
+            { d: "Coriandri fructus", h: [{ név: "S-linalool", main: true }] },
+            { d: "Melissae folium", h: [{ név: "citrál", main: true }, { név: "citronellál", main: true }, {név:"rozmaringsav", main:false}] },
+            { d: "Aurantii amari flos", h: [ { név: "limonén", main: false }] },
             { d: "Rosae flos", h: [{ név: "geraniol", main: true }, { név: "citronellol", main: false }] }
         ],
         "Monociklusos monoterpének": [
             { d: "Menthae piperitae folium", h: [{ név: "mentol", main: true }, { név: "menton", main: false }] },
-            { d: "Menthae crispae folium", h: [{ név: "karvon", main: true }, { név: "limonén", main: false }] },
-            { d: "Carvi fructus", h: [{ név: "karvon", main: true }, { név: "limonén", main: false }] },
-            { d: "Eucalypti folium", h: [{ név: "cineol", main: true }] },
-            { d: "Melaleucae folium", h: [{ név: "terpinén-4-ol", main: true }] }
+            { d: "Menthae crispae folium", h: [{ név: "R-karvon", main: true }, { név: "limonén", main: false }] },
+            { d: "Carvi fructus", h: [{ név: "S-karvon", main: true }, { név: "limonén", main: false }] },
+            { d: "Eucalypti folium", h: [{ név: "eukaliptol", main: true }] },
+            { d: "Melaleucae folium", h: [{ név: "terpinén-4-ol", main: true }, {név:"eukaliptol", main:true}] }
         ],
         "Biciklusos és aromás monoterpének": [
-            { d: "Rosmarini folium", h: [{ név: "kámfor", main: true }, { név: "cineol", main: false }] },
-            { d: "Juniperi galbulus", h: [{ név: "alfa-pinén", main: true }, { név: "terpinen-4-ol", main: false }] },
-            { d: "Salviae officinalis folium", h: [{ név: "tujon", main: true }, { név: "kámfor", main: false }] },
+            { d: "Rosmarini folium", h: [{ név: "kámfor", main: true }, { név: "eukaliptol", main: true }] },
+            { d: "Juniperi galbulus", h: [{ név: "alfa-pinén", main: true }, { név: "terpinén-4-ol", main: true }] },
+            { d: "Salviae officinalis folium", h: [{ név: "tujon", main: true }, { név: "kámfor", main: true }] },
             { d: "Thymi herba", h: [{ név: "timol", main: true }, { név: "karvakrol", main: false }] }
         ]
     },
@@ -256,14 +256,14 @@ const botanicalData = {
     "Keserűanyagok": {
         "Szeszkviterpén-laktonok": [
             { d: "Cardui benedicti herba", h: [{ név: "knicin", main: true }] },
-            { d: "Taraxaci officinalis radix", h: [{ név: "eudesmanolid", main: true }, { név: "inulin", main: false }] },
+            { d: "Taraxaci officinalis radix", h: [{ név: "taraxinsav", main: true }, { név: "inulin", main: false }] },
             { d: "Cynarae folium", h: [{ név: "cinaropikrin", main: true }, { név: "cinarin", main: false }] },
             { d: "Arnicae flos", h: [{ név: "helenalin", main: true }] }
         ],
         "Diterpének": [
             { d: "Marrubii herba", h: [{ név: "marrubiin", main: true }] },
             { d: "Ginkgonis folium", h: [{ név: "ginkgolid", main: true }, { név: "bilobalid", main: false }] },
-            { d: "Stevia rotundifolia", h: [{ név: "szteviozid", main: true }, { név: "rebaudiozid", main: false }] }
+            { d: "Stevia rotundifolia", h: [{ név: "szteviozid", main: true }] }
         ],
         "Lanoszterol keserűanyagok": [
             { d: "Colocynthidis fructus", h: [{ név: "kukurbitacin", main: true }] }
@@ -285,13 +285,16 @@ const botanicalData = {
     "Szaponinok": {
         "Triterpén szaponinok": [
             { d: "Hederae folium", h: [{ név: "hederakozid C", main: true }, { név: "alfa-hederin", main: false }] },
-            { d: "Primulae radix", h: [{ név: "primulaszaponin", main: true }] },
+            { d: "Primulae radix", h: [{ név: "primulaszaponin", main: true }, { név: "primin", main: true }] },
             { d: "Glycyrrhizae radix", h: [{ név: "glicirrizin", main: true }] },
-            { d: "Ginseng radix", h: [{ név: "ginzenozidok", main: true }] }
+            { d: "Ginseng radix", h: [{ név: "ginzenozidok", main: true }] },
+			{ d: "Hippocastani semen", h: [{ név: "eszcin", main: true }] },
+            { d: "Centellae asiaticae herba", h: [{ név: "aziatikozid", main: true }, { név: "madekasszozid", main: false }] },
+            { d: "Quillajae cortex", h: [{ név: "kvillajaszaponin", main: true }] }
         ],
         "Szteroid szaponinok": [
             { d: "Rusci rhizoma", h: [{ név: "ruszkogenin", main: true }] },
-	    { d:"Sarsaparillae radix", h:[{név:"szarszaparillozid", main: true}, {név:"parillin", main:true}]}
+	    	{ d:"Sarsaparillae radix", h:[{név:"szarszaparillozid", main: true}, {név:"parillin", main:true}]}
 
         ]
     },
@@ -325,31 +328,31 @@ const botanicalData = {
         ],
         "Adaptogén hatású drogok": [
             { d: "Ginseng radix", h: [{ név: "ginzenozid", main: true }, { név: "panaxán", main: false }] },
-            { d: "Poria", h: [{ név: "pachimán", main: true }, { név: "pachimsav", main: false }] },
+            { d: "Poria", h: [{ név: "pachiminsav", main: true }] },
             { d: "Eleutherococci radix", h: [{ név: "eleuterozid B+E", main: true }] }
         ],
         "Tetraterpének": [
-            { d: "Croci stigma", h: [{ név: "krocin", main: true }, { név: "pikrokrocin", main: false }, { név: "szafranál", main: false }] },
+            { d: "Croci stigma", h: [{ név: "krocin", main: true }] },
             { d: "Lycii fructus", h: [{ név: "zeaxantin", main: true }, { név: "LBP-poliszacharid", main: false }] }
         ],
         "Politerpének": [
-            { d: "Resina elastica", h: [{ név: "poliizoprén", main: true }] }
+            { d: "Resina elastica", h: [{ név: "kaucsuk", main: true }] }
         ]
     },
     "Fenil-propán származékok és gyanták": {
         "Fenilpropán-származékok": [
-            { d: "Caryophylli flos", h: [{ név: "eugenol", main: true }, { név: "acetileugenol", main: false }] },
-            { d: "Anisi fructus", h: [{ név: "transz-anetol", main: true }, { név: "esztragol", main: false }] },
-            { d: "Foeniculum-drogok", h: [{ név: "anetol", main: true }, { név: "fenkon", main: false }] },
-            { d: "Cinnamomi cortex", h: [{ név: "fahéjaldehid", main: true }, { név: "eugenol", main: false }] },
-            { d: "Myristicae semen", h: [{ név: "miriszticin", main: true }, { név: "szafrol", main: false }] },
-            { d: "Levistici radix", h: [{ név: "alkil-ftalidok", main: true }] }
+            { d: "Caryophylli flos", h: [{ név: "eugenol", main: true }, { név: "kariofillén", main: true }] },
+            { d: "Anisi fructus", h: [{ név: "anetol", main: true }, { név: "esztragol", main: true }] },
+            { d: "Foeniculi dulci fructus", h: [{ név: "anetol", main: true }, { név: "fenkon", main: true }, { név: "esztragol", main: true }] },
+            { d: "Cinnamomi cortex", h: [{ név: "fahéjaldehid", main: true }, { név: "eugenol", main: true }] },
+            { d: "Myristicae semen", h: [{ név: "miriszticin", main: true }, { név: "elemicin", main: true }] },
+            { d: "Levistici radix", h: [{ név: "n-butil-ftalidok", main: true }] }
         ],
         "Balzsamok, gyanták": [
             { d: "Terebinthina-drogok", h: [{ név: "pinén", main: true }, { név: "gyantasavak", main: false }] },
-            { d: "Balsamum peruvianum", h: [{ név: "cinnamein", main: true }, { név: "benzil-benzoát", main: false }] },
+            { d: "Balsamum peruvianum", h: [{ név: "cinnamein", main: true }, { név: "benzil-benzoát", main: false }, { név: "benzil-cinnamát", main: false }, { név: "gyanta", main: true }] },
             { d: "Benzoe-drogok", h: [{ név: "koniferil-benzoát", main: true }, { név: "benzoesav", main: false }] },
-            { d: "Myrrha", h: [{ név: "gurjunén", main: true }, { név: "kommiforsavak", main: false }] }
+            { d: "Myrrha", h: [{ név: "gyanta", main: true }, { név: "nyálka", main: false }, { név: "illóolaj", main: false }] }
         ]
     },
     "Illó szeszkviterpének és laktonok": {
@@ -370,7 +373,7 @@ const botanicalData = {
     },
     "Valepotriátok és Diterpének": {
         "Valepotriát iridoidészterek": [
-            { d: "Valerianae radix", h: [{ név: "valepotriátok", main: true }, { név: "valerénsav", main: false }] }
+            { d: "Valerianae radix", h: [{ név: "valepotriátok", main: true }, { név: "valerénsav", main: false }, { név: "illóolaj", main: false }] }
         ],
         "Diterpének": [
             { d: "Marrubii herba", h: [{ név: "marrubiin", main: true }] },
@@ -378,11 +381,11 @@ const botanicalData = {
             { d: "Stevia rotundifolia", h: [{ név: "szteviozid", main: true }, { név: "rebaudiozid", main: false }] }
         ],
         "Iridoidok és szekoiridoidok": [
-            { d: "Gentianae radix", h: [{ név: "genciopikrozid", main: true }, { név: "amarogentin", main: false }] },
-            { d: "Menyanthidis trifoliatae folium", h: [{ név: "loganin", main: true }] },
-            { d: "Centaurii herba", h: [{ név: "szverciamarin", main: true }] },
-            { d: "Harpagophyti radix", h: [{ név: "harpagozid", main: true }] },
-            { d: "Plantaginis lanceolatae folium", h: [{ név: "aukubin", main: true }, { név: "katalpol", main: false }] },
+            { d: "Gentianae radix", h: [{ név: "genciopikrozid", main: true }, { név: "amarogentin", main: true }] },
+            { d: "Menyanthidis trifoliatae folium", h: [{ név: "szverozid", main: true }] },
+            { d: "Centaurii herba", h: [{ név: "genciopikrozid", main: true }, { név: "szverciamarin", main: true }] },
+            { d: "Harpagophyti radix", h: [{ név: "harpagozid", main: true }, { név: "akteozid", main: false }] },
+            { d: "Plantaginis lanceolatae folium", h: [{ név: "aukubin", main: true }, { név: "akteozid", main: false }] },
             { d: "Agni casti fructus", h: [{ név: "aukubin", main: true }, { név: "agnuzid", main: false }] },
             { d: "Oleae folium", h: [{ név: "oleuropein", main: true }] }
         ]
