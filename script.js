@@ -15,8 +15,8 @@ const botanicalData = {
     },
     "Zsíros olajok": {
         "Telített zsírsavakban gazdag": [
-            { d: "Theobromatis oleum", h: [{ név: "sztearinsav", main: true }, { név: "oleodisztearin", main: false }] },
-            { d: "Gossypii oleum", h: [{ név: "palmitinsav", main: true }, { név: "gosszipol", main: false }] }
+            { d: "Theobromatis oleum", h: [{ név: "sztearinsav", main: true }, { név: "palmitinsav", main: true }, { név: "olajsav", main: false }] },
+            { d: "Gossypii oleum", h: [{ név: "palmitinsav", main: true }, { név: "sztearinsav", main: true }, { név: "gosszipol", main: false }] }
         ],
         "Olajsavban gazdag": [
             { d: "Olivae oleum", h: [{ név: "olajsav", main: true }, { név: "szitoszterol", main: false }] },
