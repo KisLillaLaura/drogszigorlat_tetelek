@@ -54,7 +54,8 @@ const botanicalData = {
 	],
 		"Gomba poliszacharidok": [
 	    	{ d: "Shiitake", h:[{név: "kitin", main: false}, {név: "lentinán", main: true}]},
-	    	{ d: "Hasadtlemezű gomba", h:[{ név: "schizofillán", main: true}, {név: "kitin", main: false}]}
+	    	{ d: "Hasadtlemezű gomba", h:[{ név: "schizofillán", main: true}, {név: "kitin", main: false}]},
+			{ d: "Lepketapló", h:[{ név:"Poliszacharid-Peptid-Komplex", main:true}, {név:"kitin", main:false}]}
         ]
     },
     "Heteropoliszacharidok":{
