@@ -19,16 +19,16 @@ const botanicalData = {
             { d: "Gossypii oleum", h: [{ név: "palmitinsav", main: true }, { név: "sztearinsav", main: true }, { név: "gosszipol", main: false }] }
         ],
         "Olajsavban gazdag": [
-            { d: "Olivae oleum", h: [{ név: "olajsav", main: true }, { név: "szitoszterol", main: false }] },
-            { d: "Amygdalae oleum", h: [{ név: "olajsav", main: true }, { név: "amygdalin", main: false }] },
+            { d: "Olivae oleum", h: [{ név: "olajsav", main: true }, { név: "oleokantal", main: false }] },
+            { d: "Amygdalae oleum", h: [{ név: "olajsav", main: true }, { név: "linolsav", main: false }, {név:"amigdalin", main:false}] },
             { d: "Rapae oleum", h: [{ név: "olajsav", main: true }, { név: "erukasav", main: false }] },
             { d: "Sesami oleum", h: [{ név: "olajsav", main: true }, { név: "szezamin", main: false }] }
         ],
         "Linolsavban gazdag": [
             { d: "Helianthi annui oleum", h: [{ név: "linolsav", main: true }] },
             { d: "Carthami oleum", h: [{ név: "linolsav", main: true }] },
-            { d: "Soiae oleum", h: [{ név: "linolsav", main: true }, { név: "stigmaszterol", main: false }] },
-            { d: "Cucurbitae oleum", h: [{ név: "linolsav", main: true }, { név: "kukurbitin", main: false }] }
+            { d: "Soiae oleum", h: [{ név: "linolsav", main: true }, { név: "genisztein", main: false }] },
+            { d: "Cucurbitae oleum", h: [{ név: "linolsav", main: true }, { név: "béta-szitoszterin", main: false }] }
         ],
         "α-Linolénsavban gazdag": [
             { d: "Lini oleum", h: [{ név: "alfa-linolénsav", main: true }] }
